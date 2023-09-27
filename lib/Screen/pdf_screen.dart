@@ -97,7 +97,7 @@ class _PdfScreenState extends State<PdfScreen> {
                           Text("${e['Quantity']}",style: TextStyle(color:Colors.grey.shade600,fontSize:15,fontWeight: FontWeight.bold)),
                         ],
                       ),
-                      SizedBox(width: 50),
+                      SizedBox(width: 40),
                       Column(
                         children: [
                           Text("${e['Total']}",style: TextStyle(color:Colors.grey.shade600,fontSize:15,fontWeight: FontWeight.bold)),
