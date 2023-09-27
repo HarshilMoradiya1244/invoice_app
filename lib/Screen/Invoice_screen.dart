@@ -79,6 +79,10 @@ class _InvoiceGenrateState extends State<InvoiceGenrate> {
                 ),
                 ElevatedButton(
                     onPressed: () {
+                      setState(() {
+                        total = double.parse(txtprice.text) *
+                            double.parse(txtQuantity.text);
+                      });
                       Map m1 = {
                         "ProductName": txtProductName.text,
                         "GST": txtGST.text,
@@ -86,13 +90,10 @@ class _InvoiceGenrateState extends State<InvoiceGenrate> {
                         "Quantity": txtQuantity.text,
                         "Price": txtprice.text,
                         "ProductNo": txtProductNo.text,
-                        "Total":txttotal.text,
+                        "Total":total,
                       };
                       Global.g1.InvoiceList.add(m1);
-                      setState(() {
-                        total = double.parse(txtprice.text) *
-                            double.parse(txtQuantity.text);
-                      });
+
                       Future.delayed(Duration(seconds: 3), () {
                         Navigator.pop(context);
                       });

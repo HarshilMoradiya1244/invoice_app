@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   .map(
                     (e) => Container(
                       margin: EdgeInsets.all(18),
-                      height: MediaQuery.of(context).size.height * 0.13,
+                      height: MediaQuery.of(context).size.height * 0.15,
                       width: double.infinity,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -66,12 +66,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text("GST % : "'${e['GST']}'),
-                                    Text("Discount % : "'${e['Discount']}'),
+                                    Text("GST % : "'${e['GST']}%'),
+                                    Text("Discount % : "'${e['Discount']}%'),
                                   ],
                                 ),
                                 Column(
                                   children: [
+                                    Text("Quantity : "'${e['Quantity']}'),
                                     Text("Price : "'${e['Price']}'),
                                     Text("Total : "'${e['Total']}'),
                                   ],
