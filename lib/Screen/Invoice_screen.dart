@@ -61,20 +61,22 @@ class _InvoiceGenrateState extends State<InvoiceGenrate> {
             padding: const EdgeInsets.all(10),
             child: Column(
               children: [
-                textTile(txtProductName, 'Product Name'),
+                textTile(txtProductName, 'Product Name',TextInputType.name),
                 const SizedBox(height: 10),
-                textTile(txtProductNo, 'Product No.'),
+                textTile(txtProductNo, 'Product No.',TextInputType.number),
                 const SizedBox(height: 10),
-                textTile(txtGST, 'GST%'),
+                textTile(txtGST, 'GST%',TextInputType.number),
                 const SizedBox(height: 10),
-                textTile(txtDiscount, 'Discount'),
+                textTile(txtDiscount, 'Discount',TextInputType.number),
                 const SizedBox(height: 10),
                 Row(
                   children: [
                     SizedBox(
-                        width: 150, child: textTile(txtQuantity, "Quantity")),
+                        width: 150, child: textTile(txtQuantity, "Quantity",TextInputType.number),
+                    ),
                     const SizedBox(width: 10),
-                    SizedBox(width: 180, child: textTile(txtprice, "Price")),
+                    SizedBox(width: 180, child: textTile(txtprice, "Price",TextInputType.number),
+                    ),
                   ],
                 ),
                 ElevatedButton(
@@ -114,11 +116,11 @@ class _InvoiceGenrateState extends State<InvoiceGenrate> {
 
   TextField textTile(
     TextEditingController controller,
-    String hint,
+    String hint,TextInputType keyboard
   ) {
     return TextField(
       controller: controller,
-      keyboardType: TextInputType.emailAddress,
+      keyboardType: keyboard,
       decoration: InputDecoration(
         label: Text(
           hint,
