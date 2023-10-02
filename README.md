@@ -16,8 +16,8 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 <p>
-  <img src="https://github.com/HarshilMoradiya1244/invoice_app/assets/142592789/e54fb6d2-fc6e-402a-87a2-7ebdc1d0c9b4">
-  <img src="https://github.com/HarshilMoradiya1244/invoice_app/assets/142592789/40ebaead-4c75-4b41-9d52-0653cd599cc2">
-  <img src="https://github.com/HarshilMoradiya1244/invoice_app/assets/142592789/c3ba16ea-22a2-4832-b3c9-9f563fa90179">
+  <img src="https://github.com/HarshilMoradiya1244/invoice_app/assets/142592789/e54fb6d2-fc6e-402a-87a2-7ebdc1d0c9b4",hieght="500"width="150">
+  <img src="https://github.com/HarshilMoradiya1244/invoice_app/assets/142592789/40ebaead-4c75-4b41-9d52-0653cd599cc2",hieght="500"width="150">
+  <img src="https://github.com/HarshilMoradiya1244/invoice_app/assets/142592789/c3ba16ea-22a2-4832-b3c9-9f563fa90179",hieght="500"width="150">
 </p>
 
