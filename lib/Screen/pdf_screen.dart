@@ -37,7 +37,7 @@ class _PdfScreenState extends State<PdfScreen> {
                   decoration:BoxDecoration(border: Border.all(color: Colors.black)),
                   child:Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("Invoice No :- 159768432",style: TextStyle(fontWeight:FontWeight.bold),),
+                    child: Text("Invoice No :- ",style: TextStyle(fontWeight:FontWeight.bold),),
                   ),
                 ),
                 SizedBox(height: 2),
@@ -47,7 +47,7 @@ class _PdfScreenState extends State<PdfScreen> {
                   decoration:BoxDecoration(border: Border.all(color: Colors.black)),
                   child:Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("Date :- 27/09/2023",style: TextStyle(fontWeight:FontWeight.bold),),
+                    child: Text("Date :- ",style: TextStyle(fontWeight:FontWeight.bold),),
                   ),
                 ),
                 SizedBox(height: 15),
