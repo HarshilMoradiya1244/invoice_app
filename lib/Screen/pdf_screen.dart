@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:invoice_app/Utils/global_class.dart';
-import 'package:pdf/pdf.dart';
-import 'package:pdf/widgets.dart' as pw;
 
 class PdfScreen extends StatefulWidget {
   const PdfScreen({super.key});
@@ -18,13 +16,15 @@ class _PdfScreenState extends State<PdfScreen> {
       child: Scaffold(
         appBar:AppBar(
           centerTitle:true,
-          backgroundColor:Colors.blue,
-          title: Text("Welcome PDF",style:TextStyle(color: Colors.white),),
+          backgroundColor:Colors.white10,
+          title: Text("Welcome ",style:TextStyle(color: Colors.black),),
           leading:IconButton(onPressed: (){
             Navigator.pop(context);
-          },icon:Icon(Icons.arrow_back,color: Colors.white,),),
+          },icon:Icon(Icons.arrow_back,color: Colors.black,),),
           actions: [
-            IconButton(onPressed:(){}, icon:Icon(Icons.print,color: Colors.white,))
+            IconButton(onPressed:(){
+              Navigator.pushNamed(context, 'pdf');
+            }, icon:Icon(Icons.print,color: Colors.black,))
           ],
         ),
         body:Padding(
@@ -66,14 +66,10 @@ class _PdfScreenState extends State<PdfScreen> {
                 ),
                 Row(
                   children: [
-                    Text(" Product Name ",style: TextStyle(color:Colors.black,fontSize:15,fontWeight: FontWeight.bold)),
-                    Spacer( ),
-                    Text(" Price ",style: TextStyle(color:Colors.black,fontSize:15,fontWeight: FontWeight.bold)),
-                    Spacer( ),
-                    Text(" Quantity ",style: TextStyle(color:Colors.black,fontSize:15,fontWeight: FontWeight.bold)),
-                    Spacer( ),
-                    Text(" Total ",style: TextStyle(color:Colors.black,fontSize:15,fontWeight: FontWeight.bold)),
-                    Spacer( ),
+                    Expanded(child: Text(" Product Name ",style: TextStyle(color:Colors.black,fontSize:15,fontWeight: FontWeight.bold))),
+                    Expanded(child: Text(" Price ",style: TextStyle(color:Colors.black,fontSize:15,fontWeight: FontWeight.bold))),
+                    Expanded(child: Text(" Quantity ",style: TextStyle(color:Colors.black,fontSize:15,fontWeight: FontWeight.bold))),
+                    Expanded(child: Text(" Total ",style: TextStyle(color:Colors.black,fontSize:15,fontWeight: FontWeight.bold))),
                   ],
                 ),
                 SizedBox(height: 15),
@@ -81,30 +77,11 @@ class _PdfScreenState extends State<PdfScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children:Global.g1.InvoiceList.map((e) =>Row(
                     children: [
-                      SizedBox(width: 10),
-                      Column(
-                        children: [
-                          Text("${e['ProductName']}",style: TextStyle(color:Colors.grey.shade600,fontSize:15,fontWeight: FontWeight.bold)),
-                        ],
-                      ),
-                      SizedBox(width:40),
-                      Column(
-                        children: [
-                        Text("${e['Price']}",style: TextStyle(color:Colors.grey.shade600,fontSize:15,fontWeight: FontWeight.bold)),
-                      ],),
-                      SizedBox(width: 50),
-                      Column(
-                        children: [
-                          Text("${e['Quantity']}",style: TextStyle(color:Colors.grey.shade600,fontSize:15,fontWeight: FontWeight.bold)),
-                        ],
-                      ),
-                      SizedBox(width: 40),
-                      Column(
-                        children: [
-                          Text("${e['Total']}",style: TextStyle(color:Colors.grey.shade600,fontSize:15,fontWeight: FontWeight.bold)),
-                        ],
-                      ),
-                      Spacer( ),],
+                      Expanded(child:Text("${e['ProductName']}",style: TextStyle(color:Colors.grey.shade600,fontSize:15,fontWeight: FontWeight.bold),),),
+                      Expanded(child:Text("${e['Price']}",style: TextStyle(color:Colors.grey.shade600,fontSize:15,fontWeight: FontWeight.bold),),),
+                      Expanded(child:Text("${e['Quantity']}",style: TextStyle(color:Colors.grey.shade600,fontSize:15,fontWeight: FontWeight.bold),),),
+                      Expanded(child:Text("${e['Total']}",style: TextStyle(color:Colors.grey.shade600,fontSize:15,fontWeight: FontWeight.bold),),),
+                    ],
                   )).toList(),
                 )
               ],
