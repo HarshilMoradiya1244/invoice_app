@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invoice_app/Screen/pdf.dart';
 import 'package:invoice_app/Utils/global_class.dart';
 
 class PdfScreen extends StatefulWidget {
@@ -23,13 +24,15 @@ class _PdfScreenState extends State<PdfScreen> {
           },icon:Icon(Icons.arrow_back,color: Colors.black,),),
           actions: [
             IconButton(onPressed:(){
-              Navigator.pushNamed(context, 'pdf');
-            }, icon:Icon(Icons.print,color: Colors.black,))
+              pdfMaker();
+            },
+                icon:Icon(Icons.print,color: Colors.black,))
+
           ],
         ),
         body:Padding(
           padding: const EdgeInsets.all(8.0),
-          child: SingleChildScrollView(
+          child: SingleChildScrollView(scrollDirection:Axis.vertical,
             child: Column(
               children: [
                 Text(" I Khodal Mobile",style: TextStyle(color:Colors.black,fontSize:25,fontWeight: FontWeight.bold),),
@@ -54,17 +57,20 @@ class _PdfScreenState extends State<PdfScreen> {
                 ),
                 SizedBox(height: 15),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text("==========================================="),
-                        Align(alignment: Alignment.center,child: Text("Address :- \n \t\t\t\t\t\t\tG-102 / PodarArcade , Near Railway Station , \n\t\t\t\t\t\t\t Varachha , Surat , Gujrat",style: TextStyle(color:Colors.black,fontWeight: FontWeight.bold),)),
+                        Align(alignment: Alignment.center,child: Text("Address :- \nG-102 / PodarArcade , Near Railway Station , \n Varachha , Surat , Gujrat",style: TextStyle(color:Colors.black,fontWeight: FontWeight.bold),)),
                         Text("==========================================="),
                       ],
                     ),
                   ],
                 ),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Expanded(child: Text(" Product Name ",style: TextStyle(color:Colors.black,fontSize:15,fontWeight: FontWeight.bold))),
                     Expanded(child: Text(" Price ",style: TextStyle(color:Colors.black,fontSize:15,fontWeight: FontWeight.bold))),
